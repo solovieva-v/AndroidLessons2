@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="1536dp"
+        android:background="#260A2B"
+        tools:context=".ui.home.HomeFragment">
+
+
+        <TextView
+            android:id="@+id/poet_name_view"
+            android:layout_width="225dp"
+            android:layout_height="52dp"
+            android:layout_below="@id/poet_photo_view"
+            android:layout_marginTop="28dp"
+            android:gravity="center_horizontal"
+            android:text="Poet Name"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/poet_photo_view"
+            android:layout_width="459dp"
+            android:layout_height="362dp"
+            android:layout_marginBottom="96dp"
+            android:background="#3C2E3E"
+            android:scaleType="centerCrop"
+            android:src="@raw/internet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/poet_name_view"
+            app:layout_constraintVertical_bias="0.185" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

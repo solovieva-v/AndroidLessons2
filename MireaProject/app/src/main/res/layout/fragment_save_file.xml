@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bk"
+    tools:context=".SaveFileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+
+        <EditText
+            android:id="@+id/filenameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="Название файла"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/quoteEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableTint="#B18888"
+            android:foregroundTint="#BFB5B5"
+            android:hint="Цитата"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F6BC0C"
+            android:text="Сохранить данные в файл"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/loadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F6BC0C"
+            android:text="Загрузить данные из файла"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+</FrameLayout>
