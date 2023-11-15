@@ -93,20 +93,11 @@ public class Firebase extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        if (user != null) {
+        if (user == null) {
 
             Intent intent = new Intent(Firebase.this, MainActivity.class);
             startActivity(intent);
-//
-//            binding.textView.setText(getString(R.string.emailpassword_status_fmt,
-//                    user.getEmail(), user.isEmailVerified()));
-//
-//            binding.textViewUI.setText(getString(R.string.firebase_status_fmt, user.getUid()));
-//            binding.create.setVisibility(View.GONE);
-//            binding.editTextPassword.setVisibility(View.GONE);
-//            binding.signin.setVisibility(View.GONE);
-//            binding.textViewUI.setEnabled(!user.isEmailVerified());
-//            binding.verify.setVisibility(View.VISIBLE);
+
         } else {
             binding.textView.setText(R.string.signed_out);
             binding.textViewUI.setText(null);

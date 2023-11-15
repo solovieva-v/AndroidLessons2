@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
         webView = v.findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://github.com/alnsalimova");
+        webView.loadUrl("https://github.com/solovieva-v");
         return v;
     }
 
