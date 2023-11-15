@@ -25,7 +25,6 @@ import ru.mirea.solovieva.mireaproject.databinding.FirebaseBinding;
 public class Firebase extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private FirebaseBinding binding;
-    // START declare_auth
     private FirebaseAuth mAuth;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,16 +37,20 @@ public class Firebase extends AppCompatActivity {
         binding.signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = String.valueOf(binding.editTextEmail.getText());
-                String password = String.valueOf(binding.editTextPassword.getText());
+                String email = "solovey@gmail.com";
+                String password = "lol";
+//                String email = String.valueOf(binding.editTextEmail.getText());
+//                String password = String.valueOf(binding.editTextPassword.getText());
                 signIn(email, password, v);
             }
         });
         binding.create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = String.valueOf(binding.editTextEmail.getText());
-                String password = String.valueOf(binding.editTextPassword.getText());
+                String email = "solovey@gmail.com";
+                String password = "lol";
+//                String email = String.valueOf(binding.editTextEmail.getText());
+//                String password = String.valueOf(binding.editTextPassword.getText());
                 createAccount(email, password, v);
             }
         });
@@ -93,7 +96,7 @@ public class Firebase extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        if (user == null) {
+        if (user != null) {
 
             Intent intent = new Intent(Firebase.this, MainActivity.class);
             startActivity(intent);
@@ -106,13 +109,34 @@ public class Firebase extends AppCompatActivity {
             binding.signin.setVisibility(View.VISIBLE);
         }
     }
+//    private void createAccount(String email, String password, View v) {
+//        Log.d(TAG, "createAccount:" + email);
+//        mAuth.createUserWithEmailAndPassword(email, password)
+//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//                            Log.d(TAG, "createUserWithEmail:success");
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//                            updateUI(user);
+//                            goSystem(v);
+//                        } else {
+//                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+//                            Toast.makeText(Firebase.this, "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show();
+//                            updateUI(null);
+//                        }
+//                    }
+//                });
+//    }
+
     private void createAccount(String email, String password, View v) {
         Log.d(TAG, "createAccount:" + email);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+                        if (task.isCanceled()) {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
@@ -126,27 +150,50 @@ public class Firebase extends AppCompatActivity {
                     }
                 });
     }
+
     private void signIn(String email, String password, View v) {
         Log.d(TAG, "signIn:" + email);
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+                        if (task.isComplete()) {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                            goSystem(v);
+
+//                            updateUI(user);
+//                            goSystem(v);
+                            if(!checkRemote())
+                            {
+                                Toast.makeText(Firebase.this, "The AnyDesk application was found on your device.", Toast.LENGTH_SHORT).show();
+                                DialogRemoteFind fragment = new DialogRemoteFind();
+                                fragment.show(getSupportFragmentManager(), "mirea");
+                            } else{
+                                updateUI(user);
+                                goSystem(v);
+                            }
+
                         } else {
+//                            Log.d(TAG, "signInWithEmail:success");
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//                            updateUI(user);
+//                            goSystem(v);
+////                            FirebaseUser currentUser = mAuth.getCurrentUser();
+////                            updateUI(currentUser);
+//                            if(!checkRemote())
+//                            {
+//                                updateUI(user);
+//                            }
+
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
 
                             Toast.makeText(Firebase.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-                        if (!task.isSuccessful()) {
+                        if (!task.isCanceled()) {
 
-                            binding.textView.setText(R.string.auth_failed);
+                            binding.textView.setText(R.string.auth_suc);
                         }
                     }
                 });
