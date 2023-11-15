@@ -158,19 +158,21 @@ public class Firebase extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isComplete()) {
-                            binding.textView.setText(R.string.auth_suc);
-                            Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 
 //                            updateUI(user);
 //                            goSystem(v);
                             if(!checkRemote())
                             {
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                binding.textView.setText(R.string.auth_failed);
                                 Toast.makeText(Firebase.this, "The AnyDesk application was found on your device.", Toast.LENGTH_SHORT).show();
                                 DialogRemoteFind fragment = new DialogRemoteFind();
                                 fragment.show(getSupportFragmentManager(), "mirea");
                             }
                             else{
+                                binding.textView.setText(R.string.auth_suc);
+                                Log.d(TAG, "signInWithEmail:success");
                                 updateUI(user);
                                 goSystem(v);
                             }
