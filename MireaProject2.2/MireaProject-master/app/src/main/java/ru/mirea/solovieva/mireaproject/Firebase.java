@@ -158,6 +158,7 @@ public class Firebase extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isComplete()) {
+                            binding.textView.setText(R.string.auth_suc);
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 
@@ -168,7 +169,8 @@ public class Firebase extends AppCompatActivity {
                                 Toast.makeText(Firebase.this, "The AnyDesk application was found on your device.", Toast.LENGTH_SHORT).show();
                                 DialogRemoteFind fragment = new DialogRemoteFind();
                                 fragment.show(getSupportFragmentManager(), "mirea");
-                            } else{
+                            }
+                            else{
                                 updateUI(user);
                                 goSystem(v);
                             }
@@ -191,10 +193,10 @@ public class Firebase extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-                        if (!task.isCanceled()) {
-
-                            binding.textView.setText(R.string.auth_suc);
-                        }
+//                        if (!task.isCanceled()) {
+//
+//                            binding.textView.setText(R.string.auth_suc);
+//                        }
                     }
                 });
     }
