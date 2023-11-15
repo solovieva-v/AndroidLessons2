@@ -69,9 +69,9 @@ public class Firebase extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        updateUI(currentUser);
-//
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+
 //        if(!checkRemote())
 //        {
 //            updateUI(currentUser);
@@ -124,7 +124,7 @@ public class Firebase extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            goSystem(v);
+//                            goSystem(v);
                         } else {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(Firebase.this, "Authentication failed.",
@@ -146,7 +146,7 @@ public class Firebase extends AppCompatActivity {
 
 //                            updateUI(user);
 //                            goSystem(v);
-                            if(checkRemote())
+                            if(!checkRemote())
                             {
                                 Log.w(TAG, "signInWithEmail:failure", task.getException());
                                 binding.textView.setText(R.string.auth_failed);
