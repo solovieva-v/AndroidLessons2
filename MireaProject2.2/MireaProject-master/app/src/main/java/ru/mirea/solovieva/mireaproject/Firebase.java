@@ -69,31 +69,15 @@ public class Firebase extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-
-        if(!checkRemote())
-        {
-            updateUI(currentUser);
-        }
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        updateUI(currentUser);
+//
+//        if(!checkRemote())
+//        {
+//            updateUI(currentUser);
+//        }
     }
 
-
-    private boolean checkRemote() {
-
-        @SuppressLint("QueryPermissionsNeeded") List<PackageInfo> packs = getPackageManager().getInstalledPackages(0);
-
-        for(int i=0;i < packs.size();i++) {
-            PackageInfo p = packs.get(i);
-            if(Objects.equals(p.packageName, "com.anydesk.anydeskandroid"))
-            {
-                DialogRemoteFind fragment = new DialogRemoteFind();
-                fragment.show(getSupportFragmentManager(), "mirea");
-                return true;
-            }
-        }
-        return false;
-    }
 
     private void updateUI(FirebaseUser user) {
         if (user != null) {
@@ -162,7 +146,7 @@ public class Firebase extends AppCompatActivity {
 
 //                            updateUI(user);
 //                            goSystem(v);
-                            if(!checkRemote())
+                            if(checkRemote())
                             {
                                 Log.w(TAG, "signInWithEmail:failure", task.getException());
                                 binding.textView.setText(R.string.auth_failed);
@@ -201,6 +185,22 @@ public class Firebase extends AppCompatActivity {
 //                        }
                     }
                 });
+    }
+
+    private boolean checkRemote() {
+
+        @SuppressLint("QueryPermissionsNeeded") List<PackageInfo> packs = getPackageManager().getInstalledPackages(0);
+
+        for(int i=0;i < packs.size();i++) {
+            PackageInfo p = packs.get(i);
+            if(Objects.equals(p.packageName, "com.anydesk.anydeskandroid"))
+            {
+                DialogRemoteFind fragment = new DialogRemoteFind();
+                fragment.show(getSupportFragmentManager(), "mirea");
+                return true;
+            }
+        }
+        return false;
     }
 
     private void signOut() {
