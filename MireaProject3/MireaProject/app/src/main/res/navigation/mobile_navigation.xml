@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="ru.mirea.sergeevaum.mireaproject.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="ru.mirea.sergeevaum.mireaproject.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="ru.mirea.sergeevaum.mireaproject.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/appFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.Application"
+        android:label="fragment_application"
+        tools:layout="@layout/fragment_application" />
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data" />
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/mediaFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.MediaFragment"
+        android:label="fragment_media"
+        tools:layout="@layout/fragment_media" />
+
+    <fragment
+        android:id="@+id/sensorFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.SensorFragment"
+        android:label="fragment_sensor"
+        tools:layout="@layout/fragment_sensor" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fileFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.FileFragment"
+        android:label="fragment_file"
+        tools:layout="@layout/fragment_file" />
+    <fragment
+        android:id="@+id/firebaseFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.FirebaseFragment"
+        android:label="fragment_firebase"
+        tools:layout="@layout/fragment_firebase" />
+    <fragment
+        android:id="@+id/httpFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.HttpFragment"
+        android:label="fragment_http"
+        tools:layout="@layout/fragment_http" />
+    <fragment
+        android:id="@+id/establishmentsFragment"
+        android:name="ru.mirea.sergeevaum.mireaproject.EstablishmentsFragment"
+        android:label="fragment_establishments"
+        tools:layout="@layout/fragment_establishments" />
+
+
+</navigation>

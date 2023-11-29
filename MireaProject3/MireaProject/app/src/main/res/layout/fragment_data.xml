@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataFragment">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:background="#BFC5BE" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:text="Pink Sands Beach"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="274dp"
+        android:layout_marginTop="49dp"
+        app:srcCompat="@drawable/pink_sands_beach"
+        tools:src="@drawable/pink_sands_beach"
+        tools:srcCompat="@drawable/pink_sands_beach" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="201dp"
+        android:layout_height="336dp"
+        android:layout_marginTop="323dp"
+        android:background="#C0C6BF" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="191dp"
+        android:layout_height="334dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="323dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Коралловые рифы и раковины одноклеточных обитателей океана фораминифер, имеющие красноватый и розовый оттенок, разбитые морем на мелкие частички и смешанные с белым песком, сделали пляж (на карте) острова Харбор уникальным. Розовый берег считается самым популярным и необыкновенным в Атлантическом океане."
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="336dp"
+        android:layout_marginLeft="205dp"
+        android:layout_marginTop="323dp"
+        android:background="#BFC5BE" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="239dp"
+        android:layout_marginTop="662dp"
+        android:background="#BFC5BE" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="197dp"
+        android:layout_height="187dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="323dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Остров Харбор относится к Багамским островам. Это малая по территории часть суши: в ширину не более тысячи метров и пяти километров в длину. Воздух пропитан свежестью морского бриза, а тропический климат радует комфортными температурами. Атмосфера острова спокойная и умиротворённая."
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="138dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="510dp"
+        android:src="@drawable/scale_2400" />
+
+</FrameLayout>
